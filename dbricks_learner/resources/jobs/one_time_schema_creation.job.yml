@@ -1,0 +1,27 @@
+resources:
+  jobs:
+    one_time_schema_creation:
+      name: one_time_schema_creation      
+      tasks:
+        - task_key: deploy_schemas
+          notebook_task:
+            notebook_path: ../../src/notebook/env_setup.ipynb
+            source: WORKSPACE      
+      parameters:
+        - name: catalog_name
+          default: ${var.catalog}        
+        - name: account_name
+          default: ${var.account_name}
+      performance_target: PERFORMANCE_OPTIMIZED
+      # tasks:
+      #   - task_key: notebook_task
+      #     notebook_task:
+      #       notebook_path: ../path/to/notebook.ipynb
+      # email_notifications:
+      #   on_failure:
+      #     - dev-user@shantanunarale061gmail.onmicrosoft.com
+      # trigger:
+      #   # Run this job every day, exactly one day from the last run; see https://docs.databricks.com/api/workspace/jobs/create#trigger
+      #   periodic:
+      #     interval: 1
+      #     unit: DAYS

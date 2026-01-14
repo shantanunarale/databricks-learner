@@ -4,9 +4,13 @@ variables:
     default: dev
 
   catalog:
-    default: poc_dev
+    default: retail_store_dev
     description: The catalog to use
 
   schema:
     default: ${workspace.current_user.short_name}
     description: The schema to use
+
+  account_name:
+    default: dbricksextstoragedev001
+    description: The adls gen2 account
