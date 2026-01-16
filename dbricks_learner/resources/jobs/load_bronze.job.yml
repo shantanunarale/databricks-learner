@@ -13,7 +13,7 @@ resources:
           notebook_task:
             notebook_path: ../../src/notebook/python/sales-bronze.ipynb
             base_parameters:
-              input_df: sales
+              file_to_process: sales
             source: WORKSPACE
         - task_key: process_sales_order
           depends_on:
@@ -27,5 +27,5 @@ resources:
         enabled: true
       parameters:
         - name: catalog
-          default: retail_store_dev
+          default: ${var.catalog}
       performance_target: PERFORMANCE_OPTIMIZED
