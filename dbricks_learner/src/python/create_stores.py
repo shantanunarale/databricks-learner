@@ -1,4 +1,1 @@
-from faker import Faker
-import csv
-
-with open()
+dbutils.fs.cp("/Volumes/databricks_simulated_retail_customer_data/v01/source_files", "/Volumes/retail_store_dev/landing/retail_raw", recurse=True)
